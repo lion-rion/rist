@@ -21,6 +21,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+//以下groupで囲われた部分はログインしていない場合にログインページに遷移する
+Route::group(['middleware' => ['auth']], function() {
+
+    Route::get('/stages', function () {
+        return view('stages');
+    })->name('stages');
+
+});
+
 
 //ヘルプメニューへのルート
 Route::get('/help', function(){
