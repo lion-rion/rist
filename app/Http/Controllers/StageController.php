@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\stage;
+use App\Models\Stage;
 use Illuminate\Http\Request;
 
 class StageController extends Controller
@@ -41,10 +41,10 @@ class StageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\stage  $stage
+     * @param  \App\Models\Stage  $stage
      * @return \Illuminate\Http\Response
      */
-    public function show(stage $stage)
+    public function show(Stage $stage)
     {
         //
     }
@@ -52,10 +52,10 @@ class StageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\stage  $stage
+     * @param  \App\Models\Stage  $stage
      * @return \Illuminate\Http\Response
      */
-    public function edit(stage $stage)
+    public function edit(Stage $stage)
     {
         //
     }
@@ -64,10 +64,10 @@ class StageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\stage  $stage
+     * @param  \App\Models\Stage  $stage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, stage $stage)
+    public function update(Request $request, Stage $stage)
     {
         //
     }
@@ -75,10 +75,10 @@ class StageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\stage  $stage
+     * @param  \App\Models\Stage  $stage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(stage $stage)
+    public function destroy(Stage $stage)
     {
         //
     }
