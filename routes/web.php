@@ -22,12 +22,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 //以下groupで囲われた部分はログインしていない場合にログインページに遷移する
+//ミドルウェアも追加
 Route::group(['middleware' => ['auth']], function() {
-
-    Route::get('/stages', function () {
-        return view('stages');
-    })->name('stages');
-
+    Route::middleware(['clear'])->group(function(){
+        Route::get('/stages', function () {
+            return view('stages');
+        })->name('stages');
+    });
 });
 
 
