@@ -19,22 +19,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-//以下groupで囲われた部分はログインしていない場合にログインページに遷移する
-//ミドルウェアも追加
-Route::group(['middleware' => ['auth']], function() {
-    Route::middleware(['clear'])->group(function(){
-        Route::get('/stages', function () {
-            return view('stages');
-        })->name('stages');
-    });
-});
-
-
-//ヘルプメニューへのルート
-Route::get('/help', function(){
-    return view('help');
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
